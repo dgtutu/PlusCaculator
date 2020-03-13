@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSString *path = NSHomeDirectory();
+    NSLog(@"%@",path);
     
     //创建UILabel对象
     UILabel *label=[UILabel new];
@@ -51,7 +53,7 @@
     //设置背景
     imageView.backgroundColor=[UIColor purpleColor];
     //设置图片
-    imageView.image=[UIImage imageNamed:@"111"];
+    imageView.image=[UIImage imageNamed:@""];
     //设置图片模式
     imageView.contentMode=UIViewContentModeTopRight ;
     /**
