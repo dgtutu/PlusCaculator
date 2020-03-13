@@ -20,6 +20,74 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //创建UILabel对象
+    UILabel *label=[UILabel new];
+    //设置frame
+    label.frame=CGRectMake(160, 400, 100, 75);
+    //设置背景色
+    label.backgroundColor=[UIColor greenColor];
+    //设置文字
+    label.text=@"叻叻猪";
+    //居中
+    label.textAlignment=NSTextAlignmentCenter;
+    //设置字体大小
+    label.font=[UIFont systemFontOfSize:25.f];
+    //设置行数
+    label.numberOfLines=0;
+    //设置换行
+    label.lineBreakMode=NSLineBreakByWordWrapping;
+    //设置文字的颜色
+    label.textColor=[UIColor purpleColor];
+    //添加控制器的view中
+    [self.view addSubview:label];
+    
+    //创建UIImage对象
+    UIImageView *imageView=[UIImageView new];
+    //设置frame
+    imageView.frame =CGRectMake(160, 600, 100, 100);
+    //设置大小
+    imageView.bounds =CGRectMake(0, 0, 200, 200);
+    //设置背景
+    imageView.backgroundColor=[UIColor purpleColor];
+    //设置图片
+    imageView.image=[UIImage imageNamed:@"111"];
+    //设置图片模式
+    imageView.contentMode=UIViewContentModeTopRight ;
+    /**
+            //带有scale 标识图片有可能被拉伸或者压缩
+           UIViewContentModeScaleToFill,    //完全的压缩
+     
+            //Ascept标识缩放是带有比例的,不会变形
+           UIViewContentModeScaleAspectFit, //宽高比不变 适应
+           UIViewContentModeScaleAspectFill, //
+           
+            // 重新绘制
+           UIViewContentModeRedraw,
+     
+            // 不带有scale 标识,图片不可能被拉伸或者压缩
+           UIViewContentModeCenter,
+           UIViewContentModeTop,
+           UIViewContentModeBottom,
+           UIViewContentModeLeft,
+           UIViewContentModeRight,
+           UIViewContentModeTopLeft,
+           UIViewContentModeTopRight,
+           UIViewContentModeBottomLeft,
+           UIViewContentModeBottomRight,
+     */
+    //裁剪多余部分
+    imageView.clipsToBounds=YES;
+    //加入到控制器中
+     [self.view addSubview:imageView];
+    
+    UIToolbar *toolbar=[[UIToolbar alloc]init];
+    toolbar.barStyle=UIBarStyleBlack;
+    toolbar.alpha=0.7;
+    toolbar.frame =imageView.bounds;
+    [imageView addSubview:toolbar];
+    
+   
 }
 
 - (IBAction)sum {
